@@ -1,0 +1,39 @@
+
+CREATE TABLE tourist_places (
+  place_id INT NOT NULL AUTO_INCREMENT,
+  name VARCHAR(50) NOT NULL,
+  description VARCHAR(500) NOT NULL,
+  city VARCHAR(50) NOT NULL,
+  state VARCHAR(50) NOT NULL,
+  country VARCHAR(50) NOT NULL,
+  place_rating DECIMAL(3,2) NOT NULL,
+  PRIMARY KEY (place_id)
+);
+
+
+CREATE TABLE service_providers (
+  provider_id INT NOT NULL AUTO_INCREMENT,
+  name VARCHAR(50) NOT NULL,
+  email VARCHAR(50) NOT NULL,
+  phone VARCHAR(15) NOT NULL,
+  provider_rating DECIMAL(3,2) NOT NULL,
+  PRIMARY KEY (provider_id)
+);
+
+
+CREATE TABLE place_images (
+  image_id INT NOT NULL AUTO_INCREMENT,
+  place_id INT NOT NULL,
+  url VARCHAR(100) NOT NULL,
+  PRIMARY KEY (image_id),
+  FOREIGN KEY (place_id) REFERENCES tourist_places(place_id)
+);
+
+
+CREATE TABLE place_service_providers (
+  place_id INT NOT NULL,
+  provider_id INT NOT NULL,
+  FOREIGN KEY (place_id) REFERENCES tourist_places(place_id),
+  FOREIGN KEY (provider_id) REFERENCES service_providers(provider_id),
+  PRIMARY KEY (place_id, provider_id)
+);
