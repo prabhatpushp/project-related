@@ -37,3 +37,28 @@ CREATE TABLE place_service_providers (
   FOREIGN KEY (provider_id) REFERENCES service_providers(provider_id),
   PRIMARY KEY (place_id, provider_id)
 );
+
+
+
+
+INSERT INTO tourist_places (name, description, city, state, country, place_rating)
+VALUES 
+('Taj Mahal', 'The Taj Mahal is an ivory-white marble mausoleum on the right bank of the Yamuna river in the Indian city of Agra. It was commissioned in 1632 by the Mughal emperor, Shah Jahan, to house the tomb of his favourite wife, Mumtaz Mahal.', 'Agra', 'Uttar Pradesh', 'India', 4.5),
+('Red Fort', 'The Red Fort is a historic fort in the city of Delhi in India, which served as the main residence of the Mughal Emperors. Every year on Independence Day, the Prime Minister of India hoists the Indian "tricolour flag" at the main gate of the fort and delivers a nationally broadcast speech from its ramparts.', 'Delhi', 'Delhi', 'India', 4.2),
+('Hawa Mahal', 'The Hawa Mahal is a palace in Jaipur, India, so named because it was essentially a high screen wall built so the women of the royal household could observe street festivals while unseen from the outside.', 'Jaipur', 'Rajasthan', 'India', 3.8),
+('Gateway of India', 'The Gateway of India is an arch monument built during the 20th century in Mumbai, India. The monument was erected to commemorate the landing of King George V and Queen Mary at Apollo Bunder on their visit to India in 1911.', 'Mumbai', 'Maharashtra', 'India', 4.1),
+('Golden Temple', 'The Harmandir Sahib, also known as Darbar Sahib, is a Golden Sikh Temple in Amritsar, Punjab. It is the holiest Gurdwara and the most important pilgrimage site of Sikhism.', 'Amritsar', 'Punjab', 'India', 4.7);
+
+
+
+INSERT INTO service_providers (name, email, phone, provider_rating)
+VALUES
+('Taj Mahal Tour Guides', 'info@tajmahalguides.com', '+91-9876543210', 4.5),
+('Delhi Tourist Services', 'info@delhitouristservices.com', '+91-8765432109', 4.2),
+('Jaipur Tourism Services', 'info@jaipurtourismservices.com', '+91-7654321098', 3.8),
+('Mumbai Tour Guides', 'info@mumbaitourguides.com', '+91-6543210987', 4.1),
+('Amritsar Tour Operators', 'info@amritsartouroperators.com', '+91-5432109876', 4.7);
+
+
+
+
